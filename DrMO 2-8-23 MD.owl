@@ -10,8 +10,12 @@
      xmlns:ddrm="http://www.example.com/material#"
      xmlns:drmo="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo">
+        <dcterms:contributor rdf:resource="https://www.linkedin.com/in/michael-debellis-85329/"/>
+        <dcterms:creator xml:lang="gmail.com">Dr. Nivedita Dutta</dcterms:creator>
         <rdfs:comment>Creative Commons Attribution 4.0 International Public License
 By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License (&quot;Public License&quot;). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
 
@@ -106,6 +110,7 @@ DRMO is a formalized knowledge representation of currently available huge variet
         <rdfs:comment>Naming convention of Class : Words together with capitalization of new word
 
 Naming convention of property : Words together with capitalization of new word except the initial word.</rdfs:comment>
+        <rdfs:comment xml:lang="gmail.com">The DrMO ontology is a domain ontology that represents knowledge underlying the composition, characterization and standardization of different materials involved in the dental restoration procedure. It will assist dentists in selecting appropriate materials based on up-to-date scientific knowledge to satisfy a patient’s specific requirements, without jeopardizing their clinical time. It reuses several ontologies from the OBO foundry, especially the Oral Health and Disease (OHD) Ontology. However, the dental restoration domain is complex and also requires concepts from materials science and engineering. Thus, DrMO also incorporates knowledge from the Devices, Experimental scaffolds, and Biomaterials (DEB) and Functionally Graded Materials (FGM) ontologies to provide more comprehensive knowledge of this area of dental material than previous ontologies. However, much of the terminology from FGM is different than that used in clinical dentistry. Thus, DrMO has changed the appropriate classes to make them consistent with terminology common in dentistry.  DrMO also follows ontology design best practices by reusing meta-data properties from the Dublin Core vocabulary. It captures knowledge from a large set of the most recent and influential papers in Dental Materials and related fields. Links to these papers are included in the ontology as meta-data defined with Dublin Core. It is implemented in OWL2 and was developed with the Protégé 5.5 ontology editor.  The ontology was created using the Ontology Development 101 methodology by Natalya et.al. Several domain experts in addition to Dr. Dutta also provided their expertise. The ontology is available on GitHub and licensed via an open source license. The GitHub project includes a corresponding file of SPARQL queries that answer the competency questions defined as part of the ontology development methodology.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -233,7 +238,10 @@ Naming convention of property : Words together with capitalization of new word e
 
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAddedRequirement -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAddedRequirement"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAddedRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialManipulation"/>
+    </owl:ObjectProperty>
     
 
 
@@ -241,6 +249,17 @@ Naming convention of property : Words together with capitalization of new word e
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAdhesiveRequirement">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AdhesiveAndLutingMaterialObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAssociatedCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAssociatedCondition">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAssociatedConditionFor"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration"/>
     </owl:ObjectProperty>
     
 
@@ -260,6 +279,7 @@ Naming convention of property : Words together with capitalization of new word e
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCuringDepth">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CuringDepth"/>
     </owl:ObjectProperty>
     
 
@@ -268,6 +288,19 @@ Naming convention of property : Words together with capitalization of new word e
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasFluorideReleaseProperty">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FluorideReleaseProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasISOStanderdization -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasISOStanderdization">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isISOStanderdizationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStanderdization"/>
     </owl:ObjectProperty>
     
 
@@ -295,6 +328,7 @@ Naming convention of property : Words together with capitalization of new word e
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MoistureSensitivity"/>
     </owl:ObjectProperty>
     
 
@@ -311,21 +345,8 @@ Naming convention of property : Words together with capitalization of new word e
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasPolishRetension">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PolishRetentibility"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasProperty -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasProperty">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isPropertyOf"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasShrinkage -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasShrinkage"/>
     
 
 
@@ -334,6 +355,7 @@ Naming convention of property : Words together with capitalization of new word e
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasSurfacePolishability">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SurfacePolishability"/>
     </owl:ObjectProperty>
     
 
@@ -348,15 +370,21 @@ Naming convention of property : Words together with capitalization of new word e
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAssociatedConditionFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAssociatedConditionFor"/>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAvalableFor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAvalableFor"/>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isContraindicatedFor -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isISOStanderdizationOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isContraindicatedFor"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isISOStanderdizationOf"/>
     
 
 
@@ -374,21 +402,6 @@ Naming convention of property : Words together with capitalization of new word e
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isPossessedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isPossessedBy">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isPropertyOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isPropertyOf"/>
     
 
 
@@ -415,6 +428,8 @@ Naming convention of property : Words together with capitalization of new word e
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#needMaterialManipulation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialManipulation"/>
     </owl:ObjectProperty>
     
 
@@ -433,6 +448,16 @@ Naming convention of property : Words together with capitalization of new word e
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#needToothSurfacePreparation">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ToothSurfacePreparation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#needsDentalObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#needsDentalObject">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OHD_0000012"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
     </owl:ObjectProperty>
     
 
@@ -446,17 +471,20 @@ Naming convention of property : Words together with capitalization of new word e
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#settingReactionInitiatedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#settingReactionInitiatedBy">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SettingReaction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#suitableDentalMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#suitableDentalMaterial">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OHD_0000012"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
     </owl:ObjectProperty>
     
 
@@ -699,6 +727,14 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <rdfs:label>Homo Sapiens</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCIT_C16360 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16360">
@@ -777,6 +813,15 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
         <rdfs:comment xml:lang="en">A dental procedure in which either a whole tooth or a part of a tooth is replaced by dental restoration material in order to reestablish the tooth&apos;s anatomical and functional form and function.</rdfs:comment>
         <rdfs:comment>http://purl.obolibrary.org/obo/OHD_0000004</rdfs:comment>
         <rdfs:label>Tooth Restoration Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OHD_0000012 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000012">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <rdfs:label>Human Dental Patient</rdfs:label>
     </owl:Class>
     
 
@@ -864,16 +909,6 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Allergy -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Allergy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
-        <rdfs:comment xml:lang="en">Patient with history of Nickel allergy should avoid Restorative Material with Nickel (MaterialIngredient).
-Patient with history of Eugenol allergy should avoid Restorative Material with Eugenol(MaterialIngredient).</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AnticariogenicProperty -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AnticariogenicProperty">
@@ -919,6 +954,21 @@ On the contrary, few dental materials are contraindicated for particular use.</r
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BondingAgentVial">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LightCureCompositeKit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCuringDepth"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#4mm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">&quot;Bulkfilled Composite has been developed to enable the retoration to be built up in thik layers of upto 4 mm.&quot;</rdfs:comment>
     </owl:Class>
     
 
@@ -1023,12 +1073,6 @@ On the contrary, few dental materials are contraindicated for particular use.</r
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CementObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MoistureSensitivity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">[Dental Cement: A dental bonding substance composed of several components that are mixed together immediately before use and form a solid upon setting. They are used in a wide range of dental procedures. [Definition Source: NCI]]</rdfs:comment>
         <rdfs:comment>http://purl.obolibrary.org/obo/NCIT_C42635</rdfs:comment>
     </owl:Class>
@@ -1315,12 +1359,6 @@ Definition:Craig&apos;s restorative Dental Material</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MetalAlloy"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasFractureToughness"/>
                 <owl:someValuesFrom>
                     <rdfs:Datatype>
@@ -1410,6 +1448,7 @@ by Philip&apos;s Science of Dental Material book]</rdfs:isDefinedBy>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectPulpCapping">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000303"/>
+        <rdfs:comment xml:lang="en">In direct pulp capping, the protective dressing is placed directly over an exposed pulp; and in indirect pulp capping, a thin layer of softened dentin, that if removed would expose the pulp, is left in place and the protective dressing is placed on top.</rdfs:comment>
     </owl:Class>
     
 
@@ -1418,6 +1457,7 @@ by Philip&apos;s Science of Dental Material book]</rdfs:isDefinedBy>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectVeneerRestoration">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000303"/>
+        <rdfs:comment xml:lang="en">A direct teeth restoration procedure in which a thin layer of material (i.e., a veneer) is placed over one or more surfaces of the tooth.</rdfs:comment>
     </owl:Class>
     
 
@@ -1448,11 +1488,21 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
-        <rdfs:comment xml:lang="en">Epieptic Patient may require frequent MRI. Thus restoartive material with MRI compatibility is preferable.</rdfs:comment>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OHD_0000012"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAssociatedCondition"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000012"/>
     </owl:Class>
     
 
@@ -1473,16 +1523,10 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FlowableCompositeObject-ed -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FlowableCompositeObject -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FlowableCompositeObject-ed">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FlowableCompositeObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MacroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasElasticModulous"/>
@@ -1617,12 +1661,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Fluoride">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BiologicallyActiveSubstance"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AnticariogenicProperty"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1705,14 +1743,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAngularStressArea -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAngularStressArea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixed -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixed">
@@ -1725,12 +1755,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixedObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixed"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1816,14 +1840,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighVerticalStressArea -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighVerticalStressArea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor"/>
     </owl:Class>
     
 
@@ -2028,14 +2044,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStanderdization"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#IndirectCoreBuildupProcedure -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#IndirectCoreBuildupProcedure">
@@ -2056,6 +2064,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#IndirectPulpCapping">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000303"/>
+        <rdfs:comment xml:lang="en">In direct pulp capping, the protective dressing is placed directly over an exposed pulp; and in indirect pulp capping, a thin layer of softened dentin, that if removed would expose the pulp, is left in place and the protective dressing is placed on top.</rdfs:comment>
     </owl:Class>
     
 
@@ -2064,6 +2073,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#IndirectVeneerRestorationProcedure">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000304"/>
+        <rdfs:comment xml:lang="en">An Indirect teeth restoration procedure in which a thin layer of material (i.e., a veneer) is placed over one or more surfaces of the tooth.</rdfs:comment>
     </owl:Class>
     
 
@@ -2251,14 +2261,6 @@ In some remote area competent laboratory is not available... thus clinicians hav
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowVerticalStressArea -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowVerticalStressArea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LutingGIC -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LutingGIC">
@@ -2288,12 +2290,6 @@ In some remote area competent laboratory is not available... thus clinicians hav
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MacrofilledCompositeObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MacroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasElasticModulous"/>
@@ -2427,12 +2423,6 @@ In some remote area competent laboratory is not available... thus clinicians hav
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Price"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Term IRI: http://purl.obolibrary.org/obo/NCIT_C97325
 Definition: A physical object created by hand or machine. [Definition Source: NCI]</rdfs:comment>
     </owl:Class>
@@ -2575,6 +2565,25 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentallyRetardedDentalPatient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentallyRetardedDentalPatient">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OHD_0000012"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasAssociatedCondition"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentalRetardation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000012"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Metal -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Metal">
@@ -2603,12 +2612,6 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicrofilledCompositeObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasElasticModulous"/>
@@ -2788,7 +2791,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ModerateStressArea -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ModerateStressArea">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalStressFactor"/>
     </owl:Class>
     
 
@@ -2848,12 +2851,6 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
                         </owl:oneOf>
                     </owl:Class>
                 </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoFiller"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3012,26 +3009,14 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject_Editproperty -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject_Editproperty">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isSubjectOf"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForNanohybrid&amp;HybridComposite"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoFiller"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -3042,22 +3027,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
                         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                         <owl:withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250.0</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasFillerVolumePercent"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60.0</xsd:maxInclusive>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400.0</xsd:minExclusive>
                             </rdf:Description>
                         </owl:withRestrictions>
                     </rdfs:Datatype>
@@ -3241,6 +3211,14 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalClearanceFactor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalClearanceFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalConsideration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalStressFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalStressFactor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalConsideration"/>
     </owl:Class>
     
@@ -3494,7 +3472,9 @@ Philips Science Of Dental Material</rdfs:comment>
 
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Price -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Price"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Price">
+        <rdfs:comment xml:lang="en">Price is an important concept for Dental restorative material selection process in real life clinics.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -3580,96 +3560,6 @@ Philips Science Of Dental Material</rdfs:comment>
                 <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Acid-ethched_and_blotted_dry"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250.0</xsd:minExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasElasticModulous"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.0</xsd:minExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasKnoopHardnessNumber"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">55.0</xsd:minExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasTensileStrength"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50.0</xsd:minExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasThermalExpansionCoefficient"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.0</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasWaterSorption"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                        <owl:withRestrictions rdf:parseType="Collection">
-                            <rdf:Description>
-                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</xsd:maxExclusive>
-                            </rdf:Description>
-                        </owl:withRestrictions>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">&quot;Dental resin-based composites are structures composed of three major components: a highly cross-linked polymeric matrix reinforced by a dispersion of glass, mineral, or resin filler particles and/or short fibers bound to the matrix by 
 coupling agents.&quot;
 Philips Science of Dental Material</rdfs:comment>
@@ -3681,6 +3571,12 @@ Philips Science of Dental Material</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasISOStanderdization"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStanderdization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasPrice"/>
@@ -3768,30 +3664,6 @@ Philips Science of Dental Material</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SmallParticleHybridCompositeObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MacroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicroFiller"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#possess"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:oneOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Good_Polishability"/>
-                        </owl:oneOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasElasticModulous"/>
@@ -3933,14 +3805,6 @@ Philips Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressAndAesthetic -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressAndAesthetic">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalConsideration"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StressFactor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalConsideration"/>
     </owl:Class>
     
@@ -4228,21 +4092,6 @@ Philips Science of Dental Material</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances) -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinBasedCompositeObject"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCuringDepth"/>
-                <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#4mm"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">&quot;Bulkfilled Composite has been developed to enable the retoration to be built up in thik layers of upto 4 mm.&quot;</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CompositeFiller(weightpercent) -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CompositeFiller(weightpercent)">
@@ -4425,6 +4274,14 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CerebroVascularAccidents -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CerebroVascularAccidents">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Chemical_Activator_Reaction -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Chemical_Activator_Reaction">
@@ -4453,7 +4310,6 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DENTIN">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure"/>
-        <drmo:describedBy rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Philip&apos;s_Chapter_13_(Table_13-3)"/>
         <drmo:hasCompressiveStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">297.0</drmo:hasCompressiveStrength>
         <drmo:hasKnoopHardnessNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.0</drmo:hasKnoopHardnessNumber>
     </owl:NamedIndividual>
@@ -4486,6 +4342,14 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalPatient1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalPatient1">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OHD_0000012"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Dentalloy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Dentalloy">
@@ -4498,6 +4362,14 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Dentsply">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturerName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Diabetes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Diabetes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
     </owl:NamedIndividual>
     
 
@@ -4530,11 +4402,26 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ENAMEL">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure"/>
-        <drmo:describedBy rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Philip&apos;s_Chapter_13_(Table_13-3)"/>
         <drmo:hasCompressiveStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">384.0</drmo:hasCompressiveStrength>
         <drmo:hasElasticModulous rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.0</drmo:hasElasticModulous>
         <drmo:hasKnoopHardnessNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400.0</drmo:hasKnoopHardnessNumber>
         <drmo:hasTensileStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</drmo:hasTensileStrength>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient"/>
     </owl:NamedIndividual>
     
 
@@ -4591,6 +4478,22 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAestheticRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAestheticRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AestheticFactor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAngularStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighAngularStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalStressFactor"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighViscocityGICPaper1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighViscocityGICPaper1">
@@ -4631,6 +4534,14 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStanderdization"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Ivoclar_Vivadent -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Ivoclar_Vivadent">
@@ -4642,7 +4553,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Ivoclar_Vivadent_Tetric_EvoCeram -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Ivoclar_Vivadent_Tetric_EvoCeram">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject_Editproperty"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject"/>
         <drmo:hasColourMatchProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Perfect_Colour_Match"/>
         <drmo:hasPolishRetension rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Moderate_Retension"/>
         <drmo:hasSurfacePolishability rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Good_Polishability"/>
@@ -4661,6 +4572,22 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Low -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Low"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowAestheticRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowAestheticRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AestheticFactor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowVerticalStress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LowVerticalStress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OcclusalStressFactor"/>
+    </owl:NamedIndividual>
     
 
 
@@ -4698,6 +4625,30 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Medium_Fl_Release">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#FluorideReleaseProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentalRetardation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentalRetardation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MercuryAllergy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MercuryAllergy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ModerateAestheticRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ModerateAestheticRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AestheticFactor"/>
     </owl:NamedIndividual>
     
 
@@ -4750,6 +4701,16 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Nearly_Perfect_Colour_Match">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ColourMatchProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NickelAllergy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NickelAllergy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:comment>Patient with history of Nickel allergy should avoid Restorative Material with Nickel (MaterialIngredient).
+Patient with history of Eugenol allergy should avoid Restorative Material with Eugenol(MaterialIngredient).</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -5049,6 +5010,14 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Alzheimer’sDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Alzheimer’sDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClassI(HSHE) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClassI(HSHE)">
@@ -5178,7 +5147,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Filtek_BulkFill_(FBF,_3MESPE,_Germany) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Filtek_BulkFill_(FBF,_3MESPE,_Germany)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject"/>
         <drmo:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</drmo:hasPrice>
     </owl:NamedIndividual>
     
@@ -5209,7 +5178,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#GrandioSo_(VOCO) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#GrandioSo_(VOCO)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject_Editproperty"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject"/>
         <drmo:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</drmo:hasPrice>
     </owl:NamedIndividual>
     
@@ -5220,7 +5189,6 @@ Dentin Radioopacity =1</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Ketac_Molar_(3M_ESPE)">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ConventionalGICObject"/>
         <drmo:hasColourMatchProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Moderate_Colour_Match"/>
-        <drmo:hasShrinkage rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Less_Shrinkage"/>
         <drmo:hasSurfacePolishability rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Moderate_Polishability"/>
         <drmo:isIndicatedFor rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Difficult_To_Isolate_Restoartion"/>
         <drmo:needMaterialManipulation rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Powder_Liquid_Mixing"/>
@@ -5315,7 +5283,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Polofill_NHT_(3x4_g) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Polofill_NHT_(3x4_g)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject_Editproperty"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NanoHybridCompositeObject"/>
         <drmo:hasCompositeFillerPercent rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">83</drmo:hasCompositeFillerPercent>
         <drmo:hasCompressiveStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">440.0</drmo:hasCompressiveStrength>
         <drmo:hasElasticModulous rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17000</drmo:hasElasticModulous>
@@ -5335,7 +5303,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SDR_(Dentsply,_Germany) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SDR_(Dentsply,_Germany)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject"/>
     </owl:NamedIndividual>
     
 
@@ -5365,7 +5333,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#TetricEvoCeram_BulkFill_(TBF,_Ivoclar-Vivadent,_Liechtenstein) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#TetricEvoCeram_BulkFill_(TBF,_Ivoclar-Vivadent,_Liechtenstein)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject"/>
     </owl:NamedIndividual>
     
 
@@ -5373,7 +5341,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Venus_BulkFill_(VBF,_Heraeus,_Germany) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Venus_BulkFill_(VBF,_Heraeus,_Germany)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject"/>
     </owl:NamedIndividual>
     
 
@@ -5381,7 +5349,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#X-traBase_(XTB,_Voco,_Germany) -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#X-traBase_(XTB,_Voco,_Germany)">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject-delete(after_copy_instances)"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BulkfilledCompositeObject"/>
     </owl:NamedIndividual>
     
 
@@ -5420,6 +5388,81 @@ Dentin Radioopacity =1</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Matrix"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OrganicFiller"/>
         </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#do">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#pt">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#EpilepticDentalPatient"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#needPlacementTechnique"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#do"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#pt"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#LessComplexTechnique"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#pt"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#suitableDentalMaterial"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#do"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
 </rdf:RDF>
 
