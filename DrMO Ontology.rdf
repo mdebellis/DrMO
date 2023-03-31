@@ -331,7 +331,7 @@ Naming convention of property : Words together with capitalization of new word e
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isISOStanderdizationOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardizationLabel"/>
         <rdfs:label>has I S O Standerdization</rdfs:label>
     </owl:ObjectProperty>
     
@@ -353,7 +353,7 @@ Naming convention of property : Words together with capitalization of new word e
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasIngredient">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isIngredientOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C48187"/>
         <rdfs:label>has Ingredient</rdfs:label>
     </owl:ObjectProperty>
     
@@ -428,7 +428,7 @@ Naming convention of property : Words together with capitalization of new word e
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isAbout">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isSubjectOf"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C48187"/>
         <rdfs:label>is About</rdfs:label>
     </owl:ObjectProperty>
     
@@ -484,7 +484,7 @@ Naming convention of property : Words together with capitalization of new word e
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isIngredientOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#isIngredientOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C48187"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject"/>
         <rdfs:label>is Ingredient Of</rdfs:label>
     </owl:ObjectProperty>
@@ -830,6 +830,51 @@ Naming convention of property : Words together with capitalization of new word e
     
 
 
+    <!-- http://purl.obolibrary.org/obo/DOID_0060501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_0060501">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:label xml:lang="en">Metal Allergy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/DOID_1059 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_1059">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:label xml:lang="en">Intellectual Disability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/DOID_1287 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_1287">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:label xml:lang="en">Cardio-vascular system Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/DOID_28 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_28">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:label xml:lang="en">Endocrine System Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/DOID_863 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_863">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdfs:label xml:lang="en">Nervous System Disease</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/HP_0000689 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0000689">
@@ -840,10 +885,29 @@ Naming convention of property : Words together with capitalization of new word e
     
 
 
+    <!-- http://purl.obolibrary.org/obo/HumanToothStructure -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HumanToothStructure">
+        <rdfs:comment xml:lang="en">Human Tooth structure properties are the desired properties for an Ideal restorative material.
+Properties of enamel, dentin act as the reference.</rdfs:comment>
+        <rdfs:label xml:lang="en">Human Tooth Structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:label xml:lang="en">Datum label</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000013 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000013">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
         <npo:definition xml:lang="en">A report that is published in a journal.</npo:definition>
         <rdfs:label xml:lang="en">Journal Article</rdfs:label>
     </owl:Class>
@@ -853,10 +917,31 @@ Naming convention of property : Words together with capitalization of new word e
     <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <npo:definition xml:lang="en">A generically dependent continuant that is about some thing.</npo:definition>
         <rdfs:comment xml:lang="en">example of usage: Examples of information content entites include journal articles, data, graphical layouts, and graphs. 
 InformationContentEntity isAbout Manufactured object, their properties, component.
 It will be updated to get the most recent scientific evidence.</rdfs:comment>
         <rdfs:label xml:lang="en">Information Content Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000310 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000310">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <npo:definition xml:lang="en">A collection of information content entities intended to be understood together as a whole</npo:definition>
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000311 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000311">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <npo:definition xml:lang="en">A document that is the output of a publishing process.</npo:definition>
+        <rdfs:label xml:lang="en">Publication</rdfs:label>
     </owl:Class>
     
 
@@ -872,28 +957,28 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/NCIT_C16360 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16360">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <npo:definition xml:lang="en">A volume made up of pages fastened along one edge and enclosed between protective covers. (from American Heritage Dictionary) [Definition Source: NCI]</npo:definition>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000311"/>
+        <npo:definition xml:lang="en">Book is a publication composed of a large number of entries</npo:definition>
         <rdfs:label xml:lang="en">Book</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCIT_C48310 -->
+    <!-- http://purl.obolibrary.org/obo/NCIT_C48187 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C48310">
-        <npo:definition xml:lang="en">Move, treat, or operate with the hands or by mechanical means, especially in a skillful manner. [Definition Source: NCI]</npo:definition>
-        <rdfs:label>Manipulation</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C48187">
+        <npo:definition xml:lang="en">Definition: The tangible substance that goes into the makeup of a physical object.</npo:definition>
+        <rdfs:label>Material Ingredient</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCIT_C62612 -->
+    <!-- http://purl.obolibrary.org/obo/OAE_0008089 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C62612">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <npo:definition xml:lang="en">A small handbook</npo:definition>
-        <rdfs:label xml:lang="en">Manual</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OAE_0008089">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalDisease"/>
+        <npo:definition xml:lang="en">This is an AE which is underdevelopment or incomplete development of tooth .</npo:definition>
+        <rdfs:label xml:lang="en">Tooth Hypoplasia</rdfs:label>
     </owl:Class>
     
 
@@ -904,6 +989,25 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
         <rdfs:comment xml:lang="en">A processual entity that realizes a plan which is the concretization of a plan specification.</rdfs:comment>
         <rdfs:comment xml:lang="en">http://purl.obolibrary.org/obo/OBI_0000011</rdfs:comment>
         <rdfs:label>Planned Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000652 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000652">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#http://purl.obolibrary.org/obo/OBI_0000094"/>
+        <rdfs:comment>is a material processing with the objective to combine two or more material entities as input into a single material entity as output</rdfs:comment>
+        <rdfs:label>Material Combination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OGMS_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OGMS_0000031">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration"/>
+        <rdfs:label xml:lang="en">Disease</rdfs:label>
     </owl:Class>
     
 
@@ -971,6 +1075,26 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OHD_0000037 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000037">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000652"/>
+        <rdfs:comment xml:lang="en">A material combination in which a moldable restorative material is placed directly into or on the tooth. The material then hardens and becomes (essentially) part of the tooth.</rdfs:comment>
+        <rdfs:label>Direct Dental Material Insertion Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OHD_0000038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000038">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000652"/>
+        <rdfs:comment xml:lang="en">A material combination in which a rigid piece of restoration material is attached to a tooth. The restoration is attached to the tooth by mechanical forces or some form of cement or glue.</rdfs:comment>
+        <rdfs:label>Dental Material Tooth Attachment Process</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OHD_0000303 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000303">
@@ -986,6 +1110,16 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000304">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000004"/>
         <rdfs:label>Indirect Restoration Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OHD_0000349 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OHD_0000349">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000652"/>
+        <rdfs:comment xml:lang="en">http://purl.obolibrary.org/obo/OHD_0000349</rdfs:comment>
+        <rdfs:label>Dental Material Combination Process</rdfs:label>
     </owl:Class>
     
 
@@ -1021,6 +1155,7 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AdhesiveAndLutingMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <npo:definition xml:lang="en">Dental Material Object participates in different dental treatment procedure for adhesion and luting purpose.</npo:definition>
         <rdfs:label>Adhesive And Luting Material Object</rdfs:label>
     </owl:Class>
     
@@ -1092,9 +1227,10 @@ It will be updated to get the most recent scientific evidence.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration">
-        <npo:definition xml:lang="en">The consideration associated with the manufactured object for proper use of the object.</npo:definition>
-        <rdfs:comment xml:lang="en">Associated Consideration demand extra attention for using dental materials. Manufacturers modify few manufactured objects for some specific dental conditions like high stress area, sub gingival area, low occlusal clearance, area with more saliva, asthmatic patients, epileptic patients.
-On the contrary, few dental materials are contraindicated for particular use.</rdfs:comment>
+        <npo:definition xml:lang="en">The required consideration for a specific dental procedure associated with the conventional use of dental material object</npo:definition>
+        <rdfs:comment xml:lang="en">Associated Consideration demand extra attention for using dental material objects. Manufactured object participates in some recommended dental procedure. Few associated conditions do not allow the recommended procedures to be performed in the conventional way.
+Clinicians had to modify the material selection process for that specific condition.  
+Manufacturers modify few objects for some specific dental conditions like high stress area, sub gingival area, low occlusal clearance, area with more saliva, edge-to-edge bite, restoration in asthmatic patients, epileptic patients.</rdfs:comment>
         <rdfs:label>Associated Consideration</rdfs:label>
     </owl:Class>
     
@@ -1104,6 +1240,7 @@ On the contrary, few dental materials are contraindicated for particular use.</r
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AuxiliaryMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <npo:definition xml:lang="en">Dental Material Object participates in different dental treatment procedure for impression taking or other associated purpose in adjunct with other material.</npo:definition>
         <rdfs:label>Auxiliary Material Object</rdfs:label>
     </owl:Class>
     
@@ -1121,7 +1258,7 @@ On the contrary, few dental materials are contraindicated for particular use.</r
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BiologicallyActiveSubstance -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#BiologicallyActiveSubstance">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterial"/>
         <rdfs:label>Biologically Active Substance</rdfs:label>
     </owl:Class>
     
@@ -1286,12 +1423,6 @@ On the contrary, few dental materials are contraindicated for particular use.</r
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#GlassIonomerCementObject"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasIngredient"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Metal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasFractureToughness"/>
                 <owl:someValuesFrom>
                     <rdfs:Datatype>
@@ -1317,7 +1448,7 @@ On the contrary, few dental materials are contraindicated for particular use.</r
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Chelating -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Chelating">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000038"/>
         <rdfs:label>Chelating</rdfs:label>
     </owl:Class>
     
@@ -1328,15 +1459,6 @@ On the contrary, few dental materials are contraindicated for particular use.</r
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ChelationReaction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialReaction"/>
         <rdfs:label>Chelation Reaction</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ChemicalFormulation -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ChemicalFormulation">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
-        <rdfs:label>Chemical Formulation</rdfs:label>
     </owl:Class>
     
 
@@ -1353,7 +1475,7 @@ On the contrary, few dental materials are contraindicated for particular use.</r
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClinicalManipulation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClinicalManipulation">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C48310"/>
+        <npo:definition xml:lang="en">Dental material object need to be operated with the hands or by mechanical means,  in a skillful manner with the specification recommended for the particular object.</npo:definition>
         <rdfs:comment xml:lang="en">Clinical Manipulation: Manufactured Object require manipulation by clinicians before use in patients&apos; mouth.</rdfs:comment>
         <rdfs:label>Clinical Manipulation</rdfs:label>
     </owl:Class>
@@ -1399,18 +1521,6 @@ On the contrary, few dental materials are contraindicated for particular use.</r
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Compomer Luting Object</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterial"/>
-        <rdfs:comment xml:lang="en">ResinComposite is composed of four major components: organic polymer matrix, filler particles,coupling agent and the initiator-accelerator system.
-
-Definition:Craig&apos;s restorative Dental Material</rdfs:comment>
-        <rdfs:label>Composite</rdfs:label>
     </owl:Class>
     
 
@@ -1545,7 +1655,7 @@ At present  with rough estimation we classified the dental Material Object  as H
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CouplingAgent -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CouplingAgent">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite"/>
         <rdfs:label>Coupling Agent</rdfs:label>
     </owl:Class>
     
@@ -1673,15 +1783,6 @@ At present  with rough estimation we classified the dental Material Object  as H
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgam -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgam">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MetalAlloy"/>
-        <rdfs:label>Dental Amalgam</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamObject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamObject">
@@ -1710,10 +1811,19 @@ At present  with rough estimation we classified the dental Material Object  as H
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamPowder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamPowder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MetalAlloy"/>
+        <rdfs:label>Dental Amalgam Powder</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalDisease -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalDisease">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <npo:definition xml:lang="en">Disease of tooth and tooth supporting structure.</npo:definition>
         <rdfs:label>Dental Disease</rdfs:label>
     </owl:Class>
@@ -1723,21 +1833,9 @@ At present  with rough estimation we classified the dental Material Object  as H
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterial -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterial">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient"/>
-        <rdfs:comment>Term IRI: http://purl.obolibrary.org/obo/NCIT_C42634
-Definition: Substances that are used in the clinical practice of dentistry for the production of fillings, restorations, impressions, and prostheses. [Definition Source: NCI]</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C48187"/>
+        <npo:definition xml:lang="en">It is the basic ingredient of dental material objects.</npo:definition>
         <rdfs:label>Dental Material</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialCombinationProcess -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialCombinationProcess">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialCombination"/>
-        <rdfs:comment xml:lang="en">A material combination in which two or more dental restoration materials are combined.</rdfs:comment>
-        <rdfs:comment xml:lang="en">http://purl.obolibrary.org/obo/OHD_0000349</rdfs:comment>
-        <rdfs:label>Dental Material Combination Process</rdfs:label>
     </owl:Class>
     
 
@@ -1746,19 +1844,8 @@ Definition: Substances that are used in the clinical practice of dentistry for t
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject"/>
-        <rdfs:comment xml:lang="en">A manufactured object which is used as dental material for different dental treatment purpose.</rdfs:comment>
+        <npo:definition xml:lang="en">A manufactured object participates in different dental treatment procedure with a specific objective.</npo:definition>
         <rdfs:label>Dental Material Object</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialCombination"/>
-        <rdfs:comment xml:lang="en">A material combination in which a rigid piece of restoration material is attached to a tooth. The restoration is attached to the tooth by mechanical forces or some form of cement or glue.</rdfs:comment>
-        <rdfs:comment xml:lang="en">http://purl.obolibrary.org/obo/OHD_0000038</rdfs:comment>
-        <rdfs:label>Dental Material Tooth Attachment Process</rdfs:label>
     </owl:Class>
     
 
@@ -2122,7 +2209,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixed -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperAdmixed">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgam"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamPowder"/>
         <rdfs:label>High Copper Admixed</rdfs:label>
     </owl:Class>
     
@@ -2140,7 +2227,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperLatheCut -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperLatheCut">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgam"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamPowder"/>
         <rdfs:label>High Copper Lathe Cut</rdfs:label>
     </owl:Class>
     
@@ -2158,7 +2245,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperSpherical -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighCopperSpherical">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgam"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalAmalgamPowder"/>
         <rdfs:label>High Copper Spherical</rdfs:label>
     </owl:Class>
     
@@ -2273,15 +2360,6 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>High Viscosity G I C Object</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure">
-        <rdfs:comment xml:lang="en">Human Tooth structure properties are the desired properties for an Ideal restorative material.</rdfs:comment>
-        <rdfs:label>Human Tooth Structure</rdfs:label>
     </owl:Class>
     
 
@@ -2448,11 +2526,11 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardization -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardizationLabel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardization">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Standerdization"/>
-        <rdfs:label>ISO Standerdization</rdfs:label>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardizationLabel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StandardizationLabel"/>
+        <rdfs:label xml:lang="en">International Organization for Standardization Label</rdfs:label>
     </owl:Class>
     
 
@@ -2498,7 +2576,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#InitiatorAcceleratorSystem -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#InitiatorAcceleratorSystem">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite"/>
         <rdfs:label>Initiator Accelerator System</rdfs:label>
     </owl:Class>
     
@@ -2516,7 +2594,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#InorganicFiller -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#InorganicFiller">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite"/>
         <rdfs:comment xml:lang="en">Various transparent mineral filles are employed to strengthen and reinforce composites as well as to reduce curing shrinkage and thermal expansion.
 These include &quot;soft glass&quot;, borosilicate &quot;hard glass&quot;, fused quartz, aluminium silicate,lithium alluminium silicate, Fi, Ba, Sr, Zr, and Zic glasses.
 30 to 70 % by volume of composite</rdfs:comment>
@@ -2531,6 +2609,15 @@ These include &quot;soft glass&quot;, borosilicate &quot;hard glass&quot;, fused
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObjectIndication"/>
         <rdfs:comment xml:lang="en">Isolation from saliva is possible or not matters.</rdfs:comment>
         <rdfs:label>Isolation Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalOfDentistry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalOfDentistry">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000013"/>
+        <rdfs:label>Journal Of Dentistry</rdfs:label>
     </owl:Class>
     
 
@@ -2826,8 +2913,10 @@ These include &quot;soft glass&quot;, borosilicate &quot;hard glass&quot;, fused
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObject">
-        <rdfs:comment xml:lang="en">Term IRI: http://purl.obolibrary.org/obo/NCIT_C97325
-Definition: A physical object created by hand or machine. [Definition Source: NCI]</rdfs:comment>
+        <npo:definition xml:lang="en">A material entity produced by manufacturer with a specific objective.</npo:definition>
+        <rdfs:comment xml:lang="en">A material entity produced by manufacturer with a specific objective, available for user with different product name.
+There are product mannual available by the manufacturer to describe its ingredients with quantity ratio, property  and indicated use.
+Generally  some international standardization are present to control the product quality, and the manufactured object should have the refernce number.</rdfs:comment>
         <rdfs:label>Manufactured Object</rdfs:label>
     </owl:Class>
     
@@ -2836,7 +2925,6 @@ Definition: A physical object created by hand or machine. [Definition Source: NC
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObjectIndication -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ManufacturedObjectIndication">
-        <rdfs:comment xml:lang="en">In Textbook tooth cavity follows Black&apos;s Classification. Recently ICDAS (.........) classification is also developed. However, in clinical practise restoration material selection does not depend only on theoretical classification. Rather, individual patient&apos;s requirement is of much important deciding factor. For a class I posterior teeth cavity, some patient may need aesthetic restoration, some may select high stress restoration material for the same condition. Thus, the subclasses are real life consideration varieties. Back&apos;s classification (Class I - ClassV) are instances.  Another patient specific variation is class V cavity of a rotated molar/premolar, which may face contact area stress and require high stress tolerable restoration [ though usually class V restorations are non-stress bearing].Generally class IV cavity is considered as non-stress area, Though class IV cavity with edge-to-edge bite patient or classIV cavity opposite a PFM crown face stress.</rdfs:comment>
         <rdfs:label>Manufactured Object Indication</rdfs:label>
     </owl:Class>
     
@@ -2859,33 +2947,10 @@ Definition: A physical object created by hand or machine. [Definition Source: NC
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialCombination -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialCombination">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#http://purl.obolibrary.org/obo/OBI_0000094"/>
-        <rdfs:comment>http://purl.obolibrary.org/obo/OBI_0000652</rdfs:comment>
-        <rdfs:comment>is a material processing with the objective to combine two or more material entities as input into a single material entity as output</rdfs:comment>
-        <rdfs:label>Material Combination</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialFeatures -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialFeatures">
         <rdfs:label>Material Features</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialIngredient">
-        <rdfs:comment xml:lang="en">Same as 
-Class: Material
-Term IRI: http://purl.obolibrary.org/obo/NCIT_C48187
-Definition: The tangible substance that goes into the makeup of a physical object. [Definition Source: NCI]</rdfs:comment>
-        <rdfs:label>Material Ingredient</rdfs:label>
     </owl:Class>
     
 
@@ -2911,7 +2976,7 @@ Definition: The tangible substance that goes into the makeup of a physical objec
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Matrix -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Matrix">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite"/>
         <rdfs:comment xml:lang="en">&quot; The resin matrix in most dental composites is based on a blend of aromatic and/or aliphatic dimethacrylate monomers such as bis-GMA  and urethane dimeth-acrylate (UDMA) to form highly cross-linked, strong, rigid, and durable polymer structures&quot;
 
 Philip&apos;s Science of Dental Material</rdfs:comment>
@@ -2923,7 +2988,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MechanicalLocking -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MechanicalLocking">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000038"/>
         <rdfs:label>Mechanical Locking</rdfs:label>
     </owl:Class>
     
@@ -3209,7 +3274,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicromechanicalBonding -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MicromechanicalBonding">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000038"/>
         <rdfs:label>Micromechanical Bonding</rdfs:label>
     </owl:Class>
     
@@ -3749,7 +3814,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OrganicFiller -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#OrganicFiller">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Composite"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite"/>
         <rdfs:label>Organic Filler</rdfs:label>
     </owl:Class>
     
@@ -3965,7 +4030,18 @@ Philips Science Of Dental Material</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PreventiveMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <npo:definition xml:lang="en">Dental Material Object participates in different dental treatment procedure for preventing caries progression.</npo:definition>
         <rdfs:label>Preventive Material Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ProductManual -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ProductManual">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000310"/>
+        <npo:definition xml:lang="en">A document published by manufacturer in the form of small hand book to describe the product.</npo:definition>
+        <rdfs:label xml:lang="en">Product Manual</rdfs:label>
     </owl:Class>
     
 
@@ -3992,6 +4068,7 @@ Philips Science Of Dental Material</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PulpProtectiveMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
+        <npo:definition xml:lang="en">Dental Material Object participates in different dental treatment procedure for pulp protection purpose in association with restorative dental material object.</npo:definition>
         <rdfs:label>Pulp Protective Material Object</rdfs:label>
     </owl:Class>
     
@@ -4048,15 +4125,23 @@ Philips Science of Dental Material</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinComposite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterial"/>
+        <rdfs:comment xml:lang="en">ResinComposite is composed of four major components: organic polymer matrix, filler particles,coupling agent and the initiator-accelerator system.
+
+Definition:Craig&apos;s restorative Dental Material</rdfs:comment>
+        <rdfs:label>Resin Composite</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RestorationMaterialObject">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialObject"/>
-        <rdfs:comment xml:lang="en">A dental Material object which is used as dental restoration material.
-
-
-[Dental Restoration Material Definition: A dental material used to fill cavities and create a new tooth surface. [Definition Source: NCI]]</rdfs:comment>
-        <rdfs:comment>http://purl.obolibrary.org/obo/NCIT_C62565</rdfs:comment>
+        <npo:definition xml:lang="en">Dental Material Object participates in dental treatment for tooth restoration procedure.</npo:definition>
         <rdfs:label>Restoration Material Object</rdfs:label>
     </owl:Class>
     
@@ -4271,11 +4356,11 @@ Philips Science of Dental Material</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Standerdization -->
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StandardizationLabel -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Standerdization">
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#StandardizationLabel">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:label>Standerdization</rdfs:label>
+        <rdfs:label xml:lang="en">Standerdization Label</rdfs:label>
     </owl:Class>
     
 
@@ -4321,7 +4406,7 @@ Philips Science of Dental Material</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AssociatedConsideration"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OGMS_0000031"/>
         <rdfs:label>Systemic Disease</rdfs:label>
     </owl:Class>
     
@@ -4365,15 +4450,6 @@ Philips Science of Dental Material</rdfs:comment>
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ToothCavityRestoration">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OHD_0000303"/>
         <rdfs:label>Tooth Cavity Restoration</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ToothHypoplasia -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ToothHypoplasia">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalDisease"/>
-        <rdfs:label xml:lang="en">Tooth Hypoplasia</rdfs:label>
     </owl:Class>
     
 
@@ -4600,17 +4676,6 @@ Low Wear Resistance &gt;17</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#direct_dental_material_insertion_process -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#direct_dental_material_insertion_process">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MaterialCombination"/>
-        <rdfs:comment xml:lang="en">A material combination in which a moldable restorative material is placed directly into or on the tooth. The material then hardens and becomes (essentially) part of the tooth.</rdfs:comment>
-        <rdfs:comment xml:lang="en">http://purl.obolibrary.org/obo/OHD_0000037</rdfs:comment>
-        <rdfs:label>Direct Dental Material Insertion Process</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CompositeFiller(weightpercent) -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CompositeFiller(weightpercent)">
@@ -4782,7 +4847,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AlzheimersDisease -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#AlzheimersDisease">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_863"/>
         <rdfs:label>Alzheimer’s Disease</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4845,7 +4910,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CerebroVascularAccidents -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#CerebroVascularAccidents">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_1287"/>
         <rdfs:label>CerebroVascularAccidents</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4854,7 +4919,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ChelatingAcrylicWithToothSurface -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ChelatingAcrylicWithToothSurface">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DentalMaterialToothAttachmentProcess"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OHD_0000038"/>
         <rdfs:label>CHELATING aCRYLIC WITH TOOTH SURFACE</rdfs:label>
     </owl:NamedIndividual>
     
@@ -4878,6 +4943,33 @@ Dentin Radioopacity =1</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClinicalPerformancOfInlays -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ClinicalPerformancOfInlays">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/IAO_0000013"/>
+        <terms:abstract>Clinical Relevance
+Composite resin or ceramic inlays, onlays, and overlays can achieve high long-term survival and success rates.
+
+SUMMARY
+Objective:
+This study evaluated the long-term clinical performance and complications of composite resin or ceramic inlays, onlays, and overlays, as well as identified the factors that might influence the clinical outcome of the restorations.
+
+Method:
+A systematic literature search was conducted in the Pubmed, Embase, Cochrane Central Register of Controlled Trials, and Web of Science databases until April 30, 2019, without language restrictions. Randomized clinical trials, clinical retrospective, and prospective cohort studies with a mean follow-up period of five years were included. Two reviewers extracted the study data independently. Newcastle-Ottawa Scale was applied for quality assessment. Meta-analysis was performed by the random-effects model and fixed-effects model.
+
+Results:
+After removal of duplicates, 2818 studies were identified. Finally, 13 observational studies were included in the meta-analysis based on retrospective and prospective cohort studies. The cumulative survival rate and success rate of composite resin inlays, onlays, and overlays were 91% and 84% after five years of follow-up, respectively. The survival rates of ceramic inlays and onlays were 90% at 5 years, 89% at 8 years and 85% at 10 years, while the success rates of ceramic inlays and onlays were 88% at 5 years and 77% at 10 years. Secondary caries and endodontic complications were the predominant failures for composite resin inlays, onlays, and overlays, while restoration fractures and endodontic complications were the main failures for ceramic inlays and onlays. No direct association between parafuntional habits and bruxism and the fractures of restorations was found. Nonvital teeth and multiple-surface restorations tended to increase the risk of failure. Regarding other factors influencing the clinical outcome, no definite conclusion could be drawn due to inconsistent results.
+
+Conclusions:
+The long-term clinical outcomes have been demonstrated to achieve high survival and success rates based on 10-year data for ceramic inlays and onlays, as well as 5-year data for resin inlays, onlays, and overlays.</terms:abstract>
+        <terms:bibliographicCitation>J Fan; Y Xu; L Si; X Li; B Fu; M Hannig
+Oper Dent (2021) 46 (1): 25–44.
+https://doi.org/10.2341/19-107-LIT</terms:bibliographicCitation>
+        <terms:title>Long-term Clinical Performance of Composite Resin or Ceramic Inlays, Onlays, and Overlays: A Systematic Review and Meta-analysis</terms:title>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Coltene -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Coltene">
@@ -4890,7 +4982,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DENTIN -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DENTIN">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/HumanToothStructure"/>
         <hasCompressiveStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">297.0</hasCompressiveStrength>
         <hasKnoopHardnessNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">68.0</hasKnoopHardnessNumber>
         <rdfs:label>DENTIN</rdfs:label>
@@ -4978,7 +5070,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Diabetes -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Diabetes">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_28"/>
         <rdfs:label>Diabetes</rdfs:label>
     </owl:NamedIndividual>
     
@@ -5014,7 +5106,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ENAMEL -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ENAMEL">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HumanToothStructure"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/HumanToothStructure"/>
         <hasCompressiveStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">384.0</hasCompressiveStrength>
         <hasElasticModulous rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">84.0</hasElasticModulous>
         <hasKnoopHardnessNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400.0</hasKnoopHardnessNumber>
@@ -5036,7 +5128,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Epilepsy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_863"/>
         <rdfs:label>Epilepsy</rdfs:label>
     </owl:NamedIndividual>
     
@@ -5127,6 +5219,13 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighViscocityGICPaper1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForHighViscosityGIC"/>
+        <terms:abstract>Objectives: To provide a brief overview of the current evidence-base for direct posterior tooth restorations in permanent teeth placed using high-viscosity glass-ionomer cement (HVGIC).
+
+Methods: The evidence sources: laboratory trials, uncontrolled clinical trials, controlled clinical trials with HVGIC restorations placed after conventional cavity preparation by drill and controlled clinical trials with HVGIC restorations placed following the atraumatic restorative treatment (ART) approach, were assessed based on systematic reviews and meta-analyses, as well as methodological studies.
+
+Results: The precision and validity of evidence from laboratory trials, uncontrolled clinical trials and non-ART controlled clinical trials are insufficient for clinical guidance. Clinical evidence for HVGIC restorations placed using ART, comprises of 38 controlled clinical trials including over 10 000 tooth restorations. Systematic review results of these trials indicate no statistically significant differences (p&gt;0.05) in the failure rates between HVGIC and amalgam restorations in single- and multiple surface tooth cavities after up to six years. Although, many of these trials suffered from too low sample sizes, their results could be pooled in three meta-analyses. The bias risk in all trials was judged to be high.
+
+Conclusion: Controlled clinical trials with HVGIC restorations placed using ART provide the bulk of the available evidence that suggest that the failure rate of direct posterior HVGIC restorations in permanent teeth are comparable to that of dental amalgam restorations.</terms:abstract>
         <terms:bibliographicCitation>Mickenautsch S. High-viscosity glass-ionomer cements for direct posterior tooth restorations in permanent teeth: The evidence in brief. J Dent. 2016 Dec;55:121-123. doi: 10.1016/j.jdent.2016.10.007. Epub 2016 Oct 17. PMID: 27765512.</terms:bibliographicCitation>
         <terms:source rdf:resource="https://pubmed.ncbi.nlm.nih.gov/27765512/"/>
         <terms:title>High-viscosity glass-ionomer cements for direct posterior tooth restorations in permanent teeth: The evidence in brief</terms:title>
@@ -5139,6 +5238,13 @@ Dentin Radioopacity =1</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#HighViscocityGICPaper2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForHighViscosityGIC"/>
+        <terms:abstract>Objectives: to determine the mechanical properties of hybrid and high-viscosity glass ionomer cements. Compressive strength and hardness of three glass ionomer cements (GIC) were measured: Ketac ™ Universal Aplicap ™, EQUIA Fil® and EQUIA FORTE Fil®, and the SEM sample analysis were performed.
+
+Materials and methods: The samples for measuring the compressive strength were prepared using silicone molds with standard dimensions of 6 mm x 4 mm and stored in deionized water for five days, while the samples for hardness measurement were prepared using Teflon molds with a cylindrical opening in the middle, dimensions 2 mm in height and 5 mm in width. For each material, one sample was made (n = 1) and stored in deionized water at 37ºC for 25 days. A representative sample of each material was analyzed using SEM. For the comparison of obtained values, the ANOVA test was used, while Tukey test was used for the multiple comparison.
+
+Results: There were no significant differences between the compressive strength of the three tested materials (p &lt;0.05). The hardness values were: 157 HV0,2 for Ketac ™ Universal Aplicap ™, 47 HV0,2 for EQUIA Fil® and 39 HV0,2 for EQUIA FORTE Fil®, respectively, and were significantly different, implying that Ketac ™ Universal Aplicap ™ has much higher hardness values than the other materials tested. SEM sample analysis revealed similar fracture modes of the tested materials.
+
+Conclusion: It was concluded that there were no statistically significant differences in compressive strength and fracture modes between the tested materials, while Ketac ™ Universal Aplicap ™ hardness results were significantly higher than the ones measured for EQUIA Fil® and EQUIA FORTE Fil®.</terms:abstract>
         <terms:bibliographicCitation xml:lang="en">Šalinović I, Stunja M, Schauperl Z, Verzak Ž, Ivanišević Malčić A, Brzović Rajić V. Mechanical Properties of High Viscosity Glass Ionomer and Glass Hybrid Restorative Materials. Acta Stomatol Croat. 2019 Jun;53(2):125-131. doi: 10.15644/asc53/2/4. PMID: 31341320; PMCID: PMC6604565.</terms:bibliographicCitation>
         <terms:contributor>Stunja M</terms:contributor>
         <terms:creator>Šalinović I</terms:creator>
@@ -5197,7 +5303,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISO_TC_106">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardization"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ISOStandardizationLabel"/>
         <rdfs:label>ISO TC 106</rdfs:label>
     </owl:NamedIndividual>
     
@@ -5355,7 +5461,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentalDisability -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MentalDisability">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_1059"/>
         <rdfs:label>MentalDisability</rdfs:label>
     </owl:NamedIndividual>
     
@@ -5381,7 +5487,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MercuryAllergy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MercuryAllergy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_0060501"/>
         <rdfs:label>MercuryAllergy</rdfs:label>
     </owl:NamedIndividual>
     
@@ -5437,6 +5543,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NHRCompositePaper1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForMicrohybridComposite"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForNanohybrid&amp;HybridComposite"/>
+        <terms:abstract>Nanohybrid resin composites present conventional particles to be mixed with nanomeric fillers and, therefore, it is unknown whether they may perform similarly to nanofilled or microhybrid resins. The current study investigated the properties of nanohybrid resins (TPH3, Grandio, Premise, Concept Advanced) in comparison with a nanofilled (Supreme XT) and a microhybrid (Z250) composite. The inorganic fillers were characterized by SEM/EDS analysis. Diametral tensile strength (DTS), surface roughness before and after toothbrush abrasion, Knoop Hardness (KHN), water sorption and solubility were evaluated. The data were separately analyzed by ANOVA and the Student-Newman-Keuls&apos; tests (p &lt; 0.05). The results of all analyses were material-dependent. Noticeable differences in filler size and shape were detected among the materials. Supreme XT generally showed higher DTS and KHN compared to all the nanohybrids and also showed lower surface roughness before and after toothbrush abrasion compared to most of the materials tested. Similar results were generally detected for the nanohybrids compared with the microhybrid material. In conclusion, the nanohybrid resins generally presented inferior properties compared with the nanofilled composite and either similar or slightly better properties compared to the microhybrid material. Under clinical conditions, nanohybrid resins may not perform similarly to nanofilled materials.</terms:abstract>
         <terms:bibliographicCitation xml:lang="en">de Moraes RR, Gonçalves Lde S, Lancellotti AC, Consani S, Correr-Sobrinho L, Sinhoreti MA. Nanohybrid resin composites: nanofiller loaded materials or traditional microhybrid resins? Oper Dent. 2009 Sep-Oct;34(5):551-7. doi: 10.2341/08-043-L. PMID: 19830969.</terms:bibliographicCitation>
         <terms:source xml:lang="en">https://pubmed.ncbi.nlm.nih.gov/19830969/</terms:source>
         <terms:title xml:lang="en">Nanohybrid resin composites: nanofiller loaded materials or traditional microhybrid resins?</terms:title>
@@ -5457,7 +5564,7 @@ Dentin Radioopacity =1</rdfs:comment>
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NickelAllergy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#NickelAllergy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#SystemicDisease"/>
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/DOID_0060501"/>
         <rdfs:comment>Patient with history of Nickel allergy should avoid Restorative Material with Nickel (MaterialIngredient).
 Patient with history of Eugenol allergy should avoid Restorative Material with Eugenol(MaterialIngredient).</rdfs:comment>
         <rdfs:label>NickelAllergy</rdfs:label>
@@ -5505,6 +5612,15 @@ Patient with history of Eugenol allergy should avoid Restorative Material with E
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PackableCompositePaper1">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForPackableResinComposite"/>
+        <terms:abstract>Purpose: The purpose of this study was to determine the wear resistance of five different packable composites versus two different composite controls using a laboratory toothbrushing simulation test.
+
+Materials and methods: Twelve samples measuring 5 mm in diameter and 3 mm thick were prepared from the following resin composites: Packable resin composites SureFil (Dentsply Ind. Com. Ltda, Petrópolis, Rio de Janeiro, Brazil), Alert (Jeneric Pentron Incorporated, Wallingford, CT, USA), Filtek P60 (3M ESPE Dental Products, St. Paul, MN, USA), Prodigy Condensable (sds Kerr, Orange CA, USA), Solitaire (Heraeus Kulzer GmbH, Wehrheim, Germany), and control resin composites Z100 Restorative (3M ESPE) and Silux Plus (3M ESPE). Finishing and polishing were conducted with Sof-Lex disks (3M ESPE), and baseline weight (grams) and surface roughness (measured with Hommel Tester T 1000, Hommelwerke, GmbH, Alte Tuttinger Strebe 20. D-7730 VS-Schwenningen, Germany) were recorded. Specimens were aged for 2 weeks until they reached a weight that remained constant for 5 consecutive days, and then were subjected to 100,000 cycles of brushing (representative of 4.2 yr) using a toothbrushing testing machine. Toothbrush heads with soft bristle tips (Colgate Classic, Colgate-Palmolive Co., Osasco, São Paulo, Brazil) with dentifrice suspension (Colgate MFP, Colgate-Palmolive Co.) in deionized water were used under a 200 g load. Changes in weight and surface roughness were determined after toothbrushing cycles.
+
+Results: Significant differences of weight loss and surface roughness were found (paired t-test, p &lt; .05). Weight loss percentage (mean [SD]) ranged from 0.38 to 1.69% (analysis of variance and Tukey&apos;s least significant difference, p &lt; .05); the weight loss of the materials ranked from least to most as follows: SureFil (0.38 [0.56]), Alert (0.52 [0.18]), Z100 (1.16 [0.27]), Filtek P60 (1.31 [0.17]), Solitaire (1.51 [0.45]), Prodigy Condensable (1.55 [0.471), and Silux Plus (1.69 [0.66]). Regarding surface roughness, Prodigy Condensable (0.19 [0.08]), Solitaire (0.28 [0.06]), and Z100 (0.30 [0.07]) became less rough after toothbrushing, whereas all the others were rendered rougher: Alert (0.49 [0.29]), Filtek P60 (0.28 [0.08]), Silux Plus (0.39 [0.091), and SureFil (0.81 [0.32]).
+
+Conclusion: SureFil and Alert were statistically more resistant to wear (less weight loss) than were the other materials. SureFil became significantly rougher than did all the others.
+
+Clinical significance: Overal, packable resin composites are unlikely to show superior wear resistance with regard to weight loss and surface roughness compared with current resin composites also indicated for posterior restorations.</terms:abstract>
         <terms:bibliographicCitation>Wang L, Garcia FC, Amarante de Araújo P, Franco EB, Mondelli RF. Wear resistance of packable resin composites after simulated toothbrushing test. J Esthet Restor Dent. 2004;16(5):303-14; discussion 314-5. doi: 10.1111/j.1708-8240.2004.tb00058.x. PMID: 15726799.</terms:bibliographicCitation>
         <terms:source>https://pubmed.ncbi.nlm.nih.gov/15726799/</terms:source>
         <terms:title>Wear resistance of packable resin composites after simulated toothbrushing test</terms:title>
@@ -5633,10 +5749,44 @@ Patient with history of Eugenol allergy should avoid Restorative Material with E
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ResinMaterialPropertyPaper">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForResinBasedComposite"/>
+        <terms:abstract>Resin-based materials have been prevalent for dental restorations over the past few decades and have been widely used for a variety of direct and indirect procedures. Typically, resin-based dental materials are required to be flowable or moldable before setting and can provide adequate mechanical strength after setting. The setting method may include, but is not limited to, light-curing, self-curing or heating. In this review, based on different indications of resin-based dental materials (e.g., dental filling composite, dental bonding agent, resin luting cement), their rheological and mechanical properties were reviewed. Viscous and flexible properties were focused on for materials before setting, while elastic properties and mechanical strength were focused on for materials after setting. At the same time, the factors that may affect their rheological and mechanical properties were discussed. It is anticipated that the insightful information and prospections of this study will be useful to the future development and fabrication of resin-based dental restorative materials.</terms:abstract>
         <terms:bibliographicCitation>Zhang X, Zhang Q, Meng X, Ye Y, Feng D, Xue J, Wang H, Huang H, Wang M, Wang J. Rheological and Mechanical Properties of Resin-Based Materials Applied in Dental Restorations. Polymers (Basel). 2021 Sep 1;13(17):2975. doi: 10.3390/polym13172975. PMID: 34503014; PMCID: PMC8433687.</terms:bibliographicCitation>
         <terms:source>https://pubmed.ncbi.nlm.nih.gov/34503014/</terms:source>
         <terms:title>Rheological and Mechanical Properties of Resin-Based Materials Applied in Dental Restorations</terms:title>
         <rdfs:label>ResinMaterialPropertyPaper</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RetrospectiveClinicalStudy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#RetrospectiveClinicalStudy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalOfDentistry"/>
+        <terms:abstract>Objectives
+To investigate the survival in terms of time to re-intervention of composite restorations in posterior teeth among patients attending for treatment at a primary care dental outreach setting over an 11-year period and to determine whether dental, patient or operator factors influenced this.
+
+Methods
+Electronic primary dental care data were collected on individual patients, including information on their dental treatment and socio-demographics as well as service provision, key performance indicators and student activity.
+
+Results
+A total of 1086 patients had at least one posterior composite placed between 2007 and 2018. This amounted to 3194 restorations placed of which 308 had a re-intervention within the 11-year period. For all restorations, the annual failure rate at 1 year was 5.73 %, at 5 years was 16.78 % and at 10 years was 18.74 %. A logistic regression showed that when compared to the least deprived 5th quintile, the most deprived 1st and 2nd quintiles were significantly less likely to have a re-intervention, being 49.2 % (p = 0.022) and 53.2 % (p = 0.031) less likely, respectively.
+
+Conclusions
+The survival rates of posterior composite restorations placed at a single outreach centre providing undergraduate dental training in the South of England, mirrors other studies. The new findings presented suggest similar re-intervention rates between dental students and dental hygiene-therapy students. This study’s findings around patient deprivation and rate and time of re-intervention raises important questions related to the need for targeted dental and after care for certain groups in the population.
+
+Clinical significance
+Understanding the factors associated with re-intervention of restorations provided to patients has an impact on patients and dental practices. Also, as we consider widening use of skill mix in dentistry to increase access to care, parity in provision of treatments within the dental team increases opportunities for delegation of tasks.</terms:abstract>
+        <terms:bibliographicCitation>Constance Wong, Igor R. Blum, Chris Louca, Martin Sparrius, Kristina Wanyonyi,
+A retrospective clinical study on the survival of posterior composite restorations in a primary care dental outreach setting over 11years,
+Journal of Dentistry,
+Volume 106,
+2021,
+103586,
+ISSN 0300-5712,
+https://doi.org/10.1016/j.jdent.2021.103586.
+(https://www.sciencedirect.com/science/article/pii/S0300571221000075)</terms:bibliographicCitation>
+        <terms:title>A retrospective clinical study on the survival of posterior composite restorations in a primary care dental outreach setting over 11years</terms:title>
+        <rdfs:label>A retrospective clinical study on the survival of posterior composite restorations in a primary care dental outreach setting over 11years</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5804,7 +5954,6 @@ Patient with history of Eugenol allergy should avoid Restorative Material with E
         <rdfs:label>4 mm</rdfs:label>
     </owl:NamedIndividual>
     
-
 
 
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DISPERSALLOY_(DENTSPLY) -->
@@ -6092,6 +6241,17 @@ Patient with history of Eugenol allergy should avoid Restorative Material with E
 
     <owl:NamedIndividual rdf:about="https://doi.org/10.1016/NHRPaper2">
         <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#JournalSupportForNanohybrid&amp;HybridComposite"/>
+        <terms:abstract>Objective: A systematic review and a meta-analysis were performed to answer the following research question: Are there differences in the color match and surface texture of nanofilled/nanohybrid and hybrid composite in patients with direct posterior restorations?
+
+Data: Randomized clinical trials that compared nanofilled/nanohybrid and hybrid composite in direct restoration in posterior teeth were included. For the analysis of the bias the risk of bias tool (RoB) was used. Meta-analyses of different pairs (nanofilled vs. hybrid and nanohybrid vs. hybrid composite) were conducted for surface texture and color match and other secondary outcomes at different follow-ups, using a random effects model. Heterogeneity was assessed with the Cochran Q test and I2 statistics. GRADE was used to assess the quality of the evidence.
+
+Sources: A search was performed in PubMed, Scopus, Web of Science, LILACS, BBO, Cochrane Library and SIGLE, without restrictions. IADR abstracts (2001-2019), unpublished and ongoing trials registries, dissertations and theses were also searched.
+
+Study selection: 28 studies remained. No study was considered to be at low RoB; four studies were judged to have high RoB, and the remaining were judged to have unclear RoB.
+
+Results: For the primary and secondary outcomes variables no significant differences were detected between nanofilled/nanohybrid restorations and hybrid composite restorations in any of the study follow-ups (p &gt; 0.08). The body of evidence for surface texture and color match was classified as moderate or low.
+
+Conclusion: No evidence of difference was found between nanofilled/nanohybrid and hybrid composite in any of the clinical parameters evaluated.</terms:abstract>
         <terms:bibliographicCitation>Maran BM, de Geus JL, Gutiérrez MF, Heintze S, Tardem C, Barceleiro MO, Reis A, Loguercio AD. Nanofilled/nanohybrid and hybrid resin-based composite in patients with direct restorations in posterior teeth: A systematic review and meta-analysis. J Dent. 2020 Aug;99:103407. doi: 10.1016/j.jdent.2020.103407. Epub 2020 Jun 9. PMID: 32526348.</terms:bibliographicCitation>
         <terms:source>https://pubmed.ncbi.nlm.nih.gov/32526348/</terms:source>
         <terms:title xml:lang="en">Nanofilled/nanohybrid and hybrid resin-based composite in patients with direct restorations in posterior teeth: A systematic review and meta-analysis</terms:title>
