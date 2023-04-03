@@ -1678,89 +1678,11 @@ At present  with rough estimation we classified the dental Material Object  as H
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByAesthetics -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByAesthetics">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasColourMatchProperty"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#ColourMatchProperty"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasPolishRetension"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PolishRetentibility"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasSurfacePolishability"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#PolishRetentibility"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:label>DDRM Object By Aesthetics</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByComposition -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByComposition">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
         <rdfs:label>DDRM Object By Composition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByDurability -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByDurability">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasMoistureSensitivity"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#MoistureSensitivity"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasWearResistance"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#WearResistance"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:label>DDRM Object By Durability</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasFractureToughness"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasTensileStrength"/>
-                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
-        <rdfs:label>DDRM Object By Strength</rdfs:label>
     </owl:Class>
     
 
@@ -2266,7 +2188,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByDurability"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasMoistureSensitivity"/>
                         <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Low_Moisture_Sensitivity"/>
@@ -2289,7 +2211,7 @@ sometimes temporary restoartion is also a need.</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
                         <owl:someValuesFrom>
@@ -2699,7 +2621,7 @@ These include &quot;soft glass&quot;, borosilicate &quot;hard glass&quot;, fused
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
                         <owl:someValuesFrom>
@@ -3009,7 +2931,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByDurability"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasMoistureSensitivity"/>
                         <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#Low_Moisture_Sensitivity"/>
@@ -3032,7 +2954,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
                         <owl:someValuesFrom>
@@ -3663,7 +3585,7 @@ Philip&apos;s Science of Dental Material</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
                         <owl:someValuesFrom>
@@ -4497,7 +4419,7 @@ Definition:Craig&apos;s restorative Dental Material</rdfs:comment>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DDRMObjectByStrength"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#DirectDentalRestorationMaterialObject"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2022/titutuli/nivedita/drmo#hasCompressiveStrength"/>
                         <owl:someValuesFrom>
