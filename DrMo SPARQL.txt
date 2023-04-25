@@ -28,7 +28,7 @@ WHERE {?Patient a  drmo:EpilepticDentalPatient.
 SELECT *
 WHERE {?drm drmo:hasMRICompatibility true}
 
-#5. Name a direct restorative material which is best for a mentally diabled patient.
+#5. Name a direct restorative material which is best for a mentally disabled patient.
 # mentally disabled patients are very prone to tooth caries and
 #need a material hasAnticariogenic property value True and 
 #material hasPlacementTechnique less complex placement technique] 
